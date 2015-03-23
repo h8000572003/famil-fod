@@ -10,11 +10,23 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	
-	 <listener>
+	 <!-- Add Support for Spring -->
+  <listener>
 	<listener-class>
 		org.springframework.web.context.ContextLoaderListener
 	</listener-class>
   </listener>
+  <listener>
+	<listener-class>
+		org.springframework.web.context.request.RequestContextListener
+	</listener-class>
+  </listener>
+  
+  <listener>
+		<listener-class>ch.qos.logback.classic.selector.servlet.ContextDetachingSCL</listener-class>
+	</listener>
+	
+
 	
 	<servlet-mapping>
 		<servlet-name>Faces Servlet</servlet-name>
@@ -31,7 +43,5 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/applicationContext.xml</param-value>
 	</context-param>
-	<listener>
-		<listener-class>ch.qos.logback.classic.selector.servlet.ContextDetachingSCL</listener-class>
-	</listener>
+	
 </web-app>

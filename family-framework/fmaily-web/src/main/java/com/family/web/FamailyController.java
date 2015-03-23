@@ -20,9 +20,10 @@ public class FamailyController implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private static final Logger LOG = LoggerFactory.getLogger(FamailyController.class);
+	private static final Logger LOG = LoggerFactory
+			.getLogger(FamailyController.class);
 
-	@ManagedProperty("#{familyService}")
+	@ManagedProperty(value = "#{familyService}")
 	private transient FamilyService familyService;
 
 	public FamailyController() {
